@@ -1,37 +1,48 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
+﻿@font-face {
+    font-family: "emodjiOne color";
+    src: url("/fonts/EmojiOneColor.otf");
+}
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    background: #5bc8dc; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    font-family: "Century Gothic";
+    font-style: italic;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-/* Carousel */
-.carousel-caption p {
+.welcomeToIQuest .welcome {
+    font-size: 23px;
+}
+.welcomeToIQuest .to {
+    font-size: 18px;
+}
+.welcomeToIQuest .iQuest {
+    font-weight: bold;
+    font-size: 31px;
+}
+.welcomeToIQuest .emoFingers {
+    font-family: "emodjiOne color";
+    font-style: normal;
+    font-size: 31px;
+}
+
+.btnStart {
+    width: 98px;
+    height: 30px;
+    background: #ffdd67;
+    border-radius: 30px;
+    box-shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.35);
+}
+.btnStart div {
+    font-family: "emodjiOne color";
+    font-style: normal;
     font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+    text-align: center;
+    line-height: 1.5;
 }
