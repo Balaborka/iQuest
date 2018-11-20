@@ -16,25 +16,31 @@ body {
     height: 100vh;
 }
 
+.line {
+    color: #fff;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
 .welcomeToIQuest .welcome {
-    font-size: 23px;
+    font-size: 69px;
 }
 .welcomeToIQuest .to {
-    font-size: 18px;
+    font-size: 54px;
 }
 .welcomeToIQuest .iQuest {
     font-weight: bold;
-    font-size: 31px;
+    font-size: 93px;
 }
 .welcomeToIQuest .emoFingers {
     font-family: "emodjiOne color";
     font-style: normal;
-    font-size: 31px;
+    font-size: 93px;
 }
 
 .btnStart {
-    width: 98px;
-    height: 30px;
+    width: 294px;
+    height: 90px;
     background: #ffdd67;
     border-radius: 30px;
     box-shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.35);
@@ -42,7 +48,7 @@ body {
 .btnStart div {
     font-family: "emodjiOne color";
     font-style: normal;
-    font-size: 20px;
+    font-size: 60px;
     text-align: center;
     line-height: 1.5;
 }
