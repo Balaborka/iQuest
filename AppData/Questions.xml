@@ -1,0 +1,15 @@
+﻿<Questions>
+
+  <Question result="101" korpus="Главный">
+Самое маленькое трехзначное простое число
+  </Question>
+  
+  <Question result="404" korpus="Главный">
+Самая популярная ошибка в браузере
+  </Question>
+  
+  <Question result="314" korpus="9">
+Число Pi
+  </Question>
+
+</Questions>

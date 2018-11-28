@@ -1,0 +1,13 @@
+@model Questions
+
+@{
+    ViewData["Title"] = "Tasks!";
+}
+
+<script src="/js/site.js"></script>
+
+
+    @foreach(var q in Model.Items) {
+        <p>@q.Text</p>
+    }
+            

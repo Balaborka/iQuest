@@ -25,3 +25,4 @@ E:\Develop\Dplm\IQuest\IQuest\obj\Debug\netcoreapp2.1\IQuest.dll
 E:\Develop\Dplm\IQuest\IQuest\obj\Debug\netcoreapp2.1\IQuest.pdb
 E:\Develop\Dplm\IQuest\IQuest\obj\Debug\netcoreapp2.1\IQuest.csproj.CopyComplete
 E:\Develop\Dplm\IQuest\IQuest\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+E:\Develop\Dplm\IQuest\IQuest\obj\Debug\netcoreapp2.1\Razor\Views\Tasks\Index.g.cshtml.cs
