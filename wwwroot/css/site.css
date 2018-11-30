@@ -22,10 +22,11 @@ body {
 }
 
 .welcomeToIQuest {
-    border-top: 4px solid white;
-    border-bottom: 4px solid white;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     padding-top: 60px;
     padding-bottom: 75px;
+    cursor: default;
 }
 .welcomeToIQuest .welcome {
     font-size: 69px;
@@ -58,9 +59,13 @@ body {
     font-size: 60px;
     text-align: center;
     line-height: 1.5;
-    color: white;
+    color: #fff;
 }
 .btnStart:hover {
-    background: #f8b227;
+    background: #dfc25c;
     text-decoration: none;
+}
+.btnStart:active {
+    width: 290px;
+    box-shadow: none;
 }
