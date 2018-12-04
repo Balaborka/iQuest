@@ -4,10 +4,14 @@
     ViewData["Title"] = "Tasks!";
 }
 
-<script src="/js/site.js"></script>
+<script>
+     var data = @Html.Raw(Json.Serialize(Model));
+</script>
 
+<div class="questions-container">
 
-    @foreach(var q in Model.Items) {
-        <p>@q.Text</p>
-    }
-            
+</div>
+
+@section scripts {
+     <script src="/js/game.js"></script>
+}
