@@ -21,6 +21,7 @@ body {
     height: 100vh;
 }
 
+/*START page*/
 .welcomeToIQuest {
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
@@ -68,4 +69,27 @@ body {
 .btnStart:active {
     width: 290px;
     box-shadow: none;
+}
+
+/*TASK page*/
+.questions-container {
+    font-size: 40px;
+    font-style: normal;
+}
+.questions-container div {
+    cursor: pointer;
+    width: 294px;
+    height: 75px;
+    background-color: rgba(91, 200, 220, 0.5);
+    border-radius: 20px;
+    border: 1px solid #fff;
+    text-align: center;
+    margin: 2px;
+}
+.questions-container div:hover {
+    background: #ffdd67;
+    text-decoration: none;
+}
+.questions-container div:active {
+    background: #dfc25c;
 }

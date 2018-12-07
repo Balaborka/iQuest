@@ -1,9 +1,11 @@
 function init(data) {
     var container = $('.questions-container');
+    var i = 0;
     data.items.forEach(element => {
-        var row = $('<div />').text(element.text).addClass('question');
+        i++;
+        var row = $('<div />').text("Задание " + i).addClass('question');
         row.click(() => {
-            alert(element.result);
+            alert("Корпус: " + element.korpus + element.text);
         });
         container.append(row);
     });

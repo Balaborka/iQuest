@@ -12,4 +12,12 @@
 Число Pi
   </Question>
 
+  <Question result="625" korpus="9">
+Math.pow(5, 4);
+  </Question>
+
+  <Question result="431" korpus="Главный">
+Если бы это число записали буквами алфавита по порядку, получилось бы "ГЭ"
+  </Question>
+
 </Questions>
