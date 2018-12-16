@@ -3,9 +3,16 @@ function init(data) {
     var i = 0;
     data.items.forEach(element => {
         i++;
-        var row = $('<div />').text("Задание " + i).addClass('question');
+        var row = $('<div />').text("Task " + i).addClass('question');
         row.click(() => {
-            alert("Корпус: " + element.korpus + element.text);
+            $(".popup").removeClass("hidden");
+            $(".questions-container").addClass("hidden");
+            $(".task-korpus").text("Корпус: " + element.korpus);
+            $(".task-text").text(element.text);
+        });
+        $(".popup-close").click(() => {
+            $(".popup").addClass("hidden");
+            $(".questions-container").removeClass("hidden");
         });
         container.append(row);
     });

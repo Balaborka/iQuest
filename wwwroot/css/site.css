@@ -74,22 +74,102 @@ body {
 /*TASK page*/
 .questions-container {
     font-size: 40px;
-    font-style: normal;
+    font-weight: bold;
 }
 .questions-container div {
     cursor: pointer;
     width: 294px;
     height: 75px;
-    background-color: rgba(91, 200, 220, 0.5);
-    border-radius: 20px;
-    border: 1px solid #fff;
-    text-align: center;
     margin: 2px;
+    text-align: center;
 }
-.questions-container div:hover {
+.questions-container div:hover, 
+.popup .popup-close:hover {
     background: #ffdd67;
     text-decoration: none;
 }
-.questions-container div:active {
+.questions-container div:active,
+.popup .popup-close:active {
     background: #dfc25c;
+}
+.container .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+    margin-left: -150px;
+    margin-top: -200px;
+    padding: 10px;
+}
+.questions-container div, 
+.container .popup {
+    background-color: rgba(91, 200, 220, 0.5);
+    border-radius: 20px;
+    border: 1px solid #fff;
+}
+.container .popup.hidden {
+    display: none;
+}
+.popup .popup-close {
+    position: absolute;
+    cursor: pointer;
+    top: -10px;
+    right: -10px;
+
+    background-color: rgba(91, 200, 220);
+    font-weight: bold;
+    font-style: normal;  
+    border-radius: 50%;
+    padding: .3em .65em;
+    border: 1px solid #fff;
+}
+.task-korpus {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+.task-text {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .questions-container,
+    .questions-container div, 
+    .container .popup{
+        width: 100%;
+    }
+    .questions-container div {
+        height: 130px;
+        line-height: 120px;
+        font-size: 70px;
+    }
+    .container .popup {
+        position: relative;
+        top: unset;
+        left: unset;
+        margin: 25px;
+    }
+    .popup .popup-close {
+        font-size: 40px;
+        top: -25px;
+        right: -25px;
+    }
+    .questions-container div:hover, 
+    .popup .popup-close:hover {
+        background: none;
+    }
+    .questions-container div:active,
+    .popup .popup-close:active {
+        background: #dfc25c;
+    }
+    .task-korpus {
+        font-size: 40px;
+    }
+    .task-text {
+        font-size: 30px;
+    }
 }
