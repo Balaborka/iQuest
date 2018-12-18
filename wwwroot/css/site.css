@@ -21,7 +21,7 @@ body {
     height: 100vh;
 }
 
-/*START page*/
+/*START page + btnScan*/
 .welcomeToIQuest {
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
@@ -45,7 +45,8 @@ body {
     font-size: 93px;
 }
 
-.btnStart {
+.btnStart,
+.btnScan {
     width: 294px;
     height: 90px;
     background: #ffdd67;
@@ -54,7 +55,8 @@ body {
     cursor: pointer;
     display: block;
 }
-.btnStart div {
+.btnStart div,
+.btnScan div {
     font-family: "emodjiOne color";
     font-style: normal;
     font-size: 60px;
@@ -62,7 +64,8 @@ body {
     line-height: 1.5;
     color: #fff;
 }
-.btnStart:hover {
+.btnStart:hover,
+.btnScan:hover {
     background: #dfc25c;
     text-decoration: none;
 }
@@ -73,7 +76,7 @@ body {
 
 /*TASK page*/
 .questions-container {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
 }
 .questions-container div {
@@ -134,18 +137,52 @@ body {
     text-align: center;
     margin-top: 10px;
 }
-
+.btnScan {
+    width: 110px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+.btnScan div {
+    font-size: 34px;
+}
+.btnScan:active {
+    width: 106px;
+    box-shadow: none;
+}
 
 @media (max-width: 768px) {
+    /*START PAGE*/
+    .welcomeToIQuest .welcome {
+        font-size: 55px;
+    }
+    .welcomeToIQuest .to {
+        font-size: 40px;
+    }
+    .welcomeToIQuest .iQuest {
+        font-size: 79px;
+    }
+    .welcomeToIQuest .emoFingers {
+        font-size: 79px;
+    }
+    .btnStart {
+        width: 264px;
+    }
+    .btnStart:active {
+        width: 260px;
+    }
+    
+    /*TASKS PAGE*/
     .questions-container,
     .questions-container div, 
     .container .popup{
         width: 100%;
     }
     .questions-container div {
-        height: 130px;
+        height: 110px;
         line-height: 120px;
-        font-size: 70px;
+        font-size: 60px;
     }
     .container .popup {
         position: relative;
@@ -154,22 +191,22 @@ body {
         margin: 25px;
     }
     .popup .popup-close {
-        font-size: 40px;
+        font-size: 30px;
         top: -25px;
         right: -25px;
     }
     .questions-container div:hover, 
     .popup .popup-close:hover {
-        background: none;
+        background-color: rgba(91, 200, 220, 0.5);
     }
     .questions-container div:active,
     .popup .popup-close:active {
         background: #dfc25c;
     }
     .task-korpus {
-        font-size: 40px;
+        font-size: 35px;
     }
     .task-text {
-        font-size: 30px;
+        font-size: 25px;
     }
 }
