@@ -69,7 +69,8 @@ body {
     background: #dfc25c;
     text-decoration: none;
 }
-.btnStart:active {
+.btnStart:active,
+.btnScan:active {
     width: 290px;
     box-shadow: none;
 }
@@ -122,7 +123,7 @@ body {
 
     background-color: rgba(91, 200, 220);
     font-weight: bold;
-    font-style: normal;  
+    font-style: normal; 
     border-radius: 50%;
     padding: .3em .65em;
     border: 1px solid #fff;
@@ -149,6 +150,37 @@ body {
 }
 .btnScan:active {
     width: 106px;
+}
+
+/*check-result*/
+.check-result {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.inputRes {
+    color: black;
+    font-style: normal;
+}
+.btnRes {
+    margin-left: 10px;
+    width: 44px;
+    height: 28px;
+    background: #ffdd67;
+    border-radius: 30px;
+    box-shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}
+.btnRes:hover {
+    background: #dfc25c;
+    text-decoration: none;
+}
+.btnRes:active {
     box-shadow: none;
 }
 
@@ -176,7 +208,7 @@ body {
     /*TASKS PAGE*/
     .questions-container,
     .questions-container div, 
-    .container .popup{
+    .container .popup {
         width: 100%;
     }
     .questions-container div {
