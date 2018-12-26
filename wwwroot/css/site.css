@@ -151,7 +151,15 @@ body {
 .btnScan:active {
     width: 106px;
 }
-
+.questions-container .disabled:hover, 
+.questions-container .disabled:active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.questions-container .disabled {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: auto;
+}
 /*check-result*/
 .check-result {
     margin-top: 40px;

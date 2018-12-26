@@ -6,21 +6,26 @@ function init(data) {
 function initTaskList() {
     var container = $('.questions-container');
     var i = 0;
-    data.items.forEach(element => {
+    data.items.forEach((item, index) => {
         i++;
         var row = $('<div />').text("Task " + i).addClass('question');
+        if (item.done)
+            row.addClass('anyClass')
         row.click(() => {
-            $(".popup").show();
-            $(".questions-container").hide();
-            initPopup(element);
+            if (item.done === false) {
+                $(".popup").show();
+                $(".questions-container").hide();
+                showPopup(item, index);
+            }
         });        
         container.append(row);
     });
+    var btnFinish = $('<div />').text("Finish").addClass('question disabled').appendTo(container);
 }
 
-function initPopup(element) {
-    $(".task-korpus").text("Корпус: " + element.korpus);
-    $(".task-text").text(element.text);
+function showPopup(item, index) {
+    $(".task-korpus").text("Корпус: " + item.korpus);
+    $(".task-text").text(item.text);
     $(".check-result").hide();
 
     $(".btnScan").click(() => {
@@ -29,10 +34,20 @@ function initPopup(element) {
 
     $(".btnRes").click(() => {       
         var scanRes = $("#inputRes").val();
-        if (scanRes === element.result) {
+        if (scanRes === item.result) {
+            item.done = true;
             hidePopup();
             $(".btnRes").off('click');
             $('#inputRes').val('');
+            $(".questions-container .question").eq(index).css("background-color","greenyellow");
+            
+            var success = data.items.some((item) => {
+                return item.done;
+            });
+
+            if (success) {
+                $(".question.disabled").removeClass("ddisabled")
+            }
         }
     });
 
