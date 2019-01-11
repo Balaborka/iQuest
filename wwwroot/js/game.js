@@ -1,6 +1,5 @@
 function init(data) {    
     initTaskList();
-    hidePopup();
 }
 
 function initTaskList() {
@@ -13,7 +12,7 @@ function initTaskList() {
             row.addClass('anyClass')
         row.click(() => {
             if (item.done === false) {
-                $(".popup").show();
+                $(".popup").fadeIn(500);
                 $(".questions-container").hide();
                 showPopup(item, index);
             }
@@ -30,6 +29,9 @@ function showPopup(item, index) {
 
     $(".btnScan").click(() => {
         $(".check-result").show();
+        $(".taskPopupContent").hide();
+        $(".taskPopupQR").fadeIn(500);
+        qrScan();
     });    
 
     $(".btnRes").click(() => {       
@@ -41,12 +43,12 @@ function showPopup(item, index) {
             $('#inputRes').val('');
             $(".questions-container .question").eq(index).css("background-color","greenyellow");
             
-            var success = data.items.some((item) => {
-                return item.done;
+            var success = !data.items.some((item) => {
+                return !item.done;
             });
 
             if (success) {
-                $(".question.disabled").removeClass("ddisabled")
+                $(".question.disabled").removeClass("disabled")
             }
         }
     });
@@ -58,8 +60,9 @@ function showPopup(item, index) {
 }
 
 function hidePopup() {
-    $(".popup").hide();
-    $(".questions-container").show();
+    $(".popup").fadeOut(500, () => {
+        $(".questions-container").show();
+      });;
 }
 
 $(function() {

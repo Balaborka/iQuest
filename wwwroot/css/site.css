@@ -105,6 +105,7 @@ body {
     margin-left: -150px;
     margin-top: -200px;
     padding: 10px;
+    display: none;
 }
 .questions-container div, 
 .container .popup {
@@ -190,6 +191,12 @@ body {
 }
 .btnRes:active {
     box-shadow: none;
+}
+.taskPopupQR {
+    display: none;
+}
+#canvas {
+    width: 100%;
 }
 
 @media (max-width: 768px) {
