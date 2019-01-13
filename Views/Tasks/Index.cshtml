@@ -9,17 +9,35 @@
 </script>
 
 <div class="container">
-    <div class="questions-container"></div>
-    <div class="popup hidden">
+    <div class="questions-container">
+    </div>
+
+    <div class="popup">
         <div class="popup-close">X</div>
-        <div class="task-korpus"></div>
-        <div class="task-text"></div>
-        <div class="btnScan">
-            <div>📷</div>
+        <div class="taskPopupContent">
+            <div class="task-korpus"></div>
+            <div class="task-text"></div>
+            <div class="btnScan">
+                <div>📷</div>
+            </div>
+            <div class="check-result">
+                <input class="inputRes" id="inputRes" type="text">
+                <div class="btnRes">ok</div>
+            </div>
+            <div class="mistake"></div>
+        </div>
+
+        <div class="taskPopupQR">
+            <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+            <canvas id="canvas" hidden></canvas>
         </div>
     </div>
 </div>
 
+  
+
 @section scripts {
+     <script src="/lib/jsQR/jsQR.js"></script>
      <script src="/js/game.js"></script>
+     <script src="/js/qr.js"></script>
 }

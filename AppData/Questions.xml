@@ -7,7 +7,7 @@
   <Question result="404" korpus="Главный">
 Самая популярная ошибка в браузере (Error Not Found)
   </Question>
-  
+  <!--
   <Question result="314" korpus="9">
 Число Pi
   </Question>
@@ -19,5 +19,5 @@ Math.pow(5, 4);
   <Question result="431" korpus="Главный">
 Если бы это число записали буквами алфавита по порядку, получилось бы "ГЭ"
   </Question>
-
+  -->
 </Questions>

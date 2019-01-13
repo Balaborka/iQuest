@@ -192,6 +192,13 @@ body {
 .btnRes:active {
     box-shadow: none;
 }
+.mistake {
+    font-size: 17px;
+    font-style: normal;
+    text-align: center;
+    margin-top: 30px;
+    display: none;
+}
 .taskPopupQR {
     display: none;
 }
@@ -255,5 +262,8 @@ body {
     }
     .task-text {
         font-size: 25px;
+    }
+    .mistake {
+        margin-top: 20px;
     }
 }

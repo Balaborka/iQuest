@@ -12,8 +12,7 @@ function initTaskList() {
             row.addClass('anyClass')
         row.click(() => {
             if (item.done === false) {
-                $(".popup").fadeIn(500);
-                $(".questions-container").hide();
+                $('.popup').css("backgroundColor", "rgba(91, 200, 220, 0.5)");
                 showPopup(item, index);
             }
         });        
@@ -23,47 +22,70 @@ function initTaskList() {
 }
 
 function showPopup(item, index) {
+    $(".popup").fadeIn(500);
+    $(".taskPopupContent").show();
+    $(".questions-container").hide();
+
     $(".task-korpus").text("Корпус: " + item.korpus);
     $(".task-text").text(item.text);
-    $(".check-result").hide();
 
     $(".btnScan").click(() => {
-        $(".check-result").show();
         $(".taskPopupContent").hide();
         $(".taskPopupQR").fadeIn(500);
-        qrScan();
+        qrScan((scanRes) => {
+            scanAnswer(scanRes, item, index);
+        });
     });    
 
     $(".btnRes").click(() => {       
         var scanRes = $("#inputRes").val();
         if (scanRes === item.result) {
+            $('.popup').css("backgroundColor", "rgba(173, 255, 47, 0.5)");
+            $('#inputRes').val('');
             item.done = true;
             hidePopup();
             $(".btnRes").off('click');
-            $('#inputRes').val('');
             $(".questions-container .question").eq(index).css("background-color","greenyellow");
-            
-            var success = !data.items.some((item) => {
-                return !item.done;
-            });
-
-            if (success) {
-                $(".question.disabled").removeClass("disabled")
-            }
+            $(".mistake").hide();
+        } else if (scanRes === '') {
+           onMistake('Введите код!');
+        } else { 
+           onMistake('Неправильный код!');
+        }
+        
+        var success = !data.items.some((item) => {
+            return !item.done;
+        });
+    
+        if (success) {
+            $(".question.disabled").removeClass("disabled")
         }
     });
 
+    function onMistake(mistakeText) {
+        $(".mistake").hide();
+        $(".mistake").text(mistakeText);
+        $(".mistake").fadeIn(500);
+    }
+
     $(".popup-close").click(() => {
         hidePopup();
-        $(".check-result").hide();
     });
 }
 
 function hidePopup() {
+    $(".taskPopupQR").hide();
+    $('#inputRes').val('');
     $(".popup").fadeOut(500, () => {
         $(".questions-container").show();
-      });;
+      });
 }
+
+function scanAnswer(scanRes, item, index) {
+    $(".taskPopupQR").hide();
+    showPopup(item, index);
+    $('#inputRes').val(scanRes);
+};
 
 $(function() {
     init(data);
