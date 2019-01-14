@@ -25,30 +25,35 @@ function showPopup(item, index) {
     $(".popup").fadeIn(500);
     $(".taskPopupContent").show();
     $(".questions-container").hide();
+    $(".mistake").hide();
 
     $(".task-korpus").text("Корпус: " + item.korpus);
     $(".task-text").text(item.text);
 
     $(".btnScan").click(() => {
+        $(".mistake").hide();
         $(".taskPopupContent").hide();
         $(".taskPopupQR").fadeIn(500);
         qrScan((scanRes) => {
-            scanAnswer(scanRes, item, index);
+            scanAnswer(scanRes, item, index);            
         });
     });    
+
+    $(".inputRes").click(() => {
+        $(".mistake").hide();
+    });
 
     $(".btnRes").click(() => {       
         var scanRes = $("#inputRes").val();
         if (scanRes === item.result) {
             $('.popup').css("backgroundColor", "rgba(173, 255, 47, 0.5)");
-            $('#inputRes').val('');
             item.done = true;
             hidePopup();
             $(".btnRes").off('click');
-            $(".questions-container .question").eq(index).css("background-color","greenyellow");
+            $(".questions-container .question").eq(index).css("backgroundColor", "rgba(173, 255, 47, 0.6)");
             $(".mistake").hide();
         } else if (scanRes === '') {
-           onMistake('Введите код!');
+           onMistake('Введите или сканируйте код!');
         } else { 
            onMistake('Неправильный код!');
         }
@@ -63,9 +68,12 @@ function showPopup(item, index) {
     });
 
     function onMistake(mistakeText) {
-        $(".mistake").hide();
         $(".mistake").text(mistakeText);
-        $(".mistake").fadeIn(500);
+        $(".mistake").show();
+        $('.popup').css("backgroundColor", "rgba(250, 128, 114, 0.5)");
+        setTimeout(function () {
+            $('.popup').css("backgroundColor", "rgba(91, 200, 220, 0.5)");
+        }, 350);
     }
 
     $(".popup-close").click(() => {
@@ -83,7 +91,7 @@ function hidePopup() {
 
 function scanAnswer(scanRes, item, index) {
     $(".taskPopupQR").hide();
-    showPopup(item, index);
+    $(".taskPopupContent").show();
     $('#inputRes').val(scanRes);
 };
 

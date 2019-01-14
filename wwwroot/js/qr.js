@@ -42,6 +42,11 @@ var video = document.createElement("video");
           drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
           outputData = code.data;
           onSuccess(code.data);
+
+          var track = video.srcObject.getTracks()[0];
+          track.stop();
+
+          return;
         } 
       }
       requestAnimationFrame(tick);
