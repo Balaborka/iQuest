@@ -45,8 +45,8 @@ $(function($) {
         });
 
         $(".popup-close").click(() => {
-            qrStop();
             hidePopup();
+            qrStop();
         });
         
         function onMistake(mistakeText) {
