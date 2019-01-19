@@ -8,6 +8,8 @@ namespace IQuest.Models
     [Serializable()]
     public class Question
     {
+        public int Id { get; set; }
+
         [XmlText()]
         public string Text { get; set; }
 
