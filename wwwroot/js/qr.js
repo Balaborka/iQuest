@@ -1,9 +1,11 @@
+var video;
+
 function qrScan(onSuccess) {
-var video = document.createElement("video");
+
+    video = document.createElement("video");
     var canvasElement = document.getElementById("canvas");
     var canvas = canvasElement.getContext("2d");
     var loadingMessage = document.getElementById("loadingMessage");
-    var outputData = document.getElementById("outputData");
 
     function drawLine(begin, end, color) {
       canvas.beginPath();
@@ -20,9 +22,15 @@ var video = document.createElement("video");
       video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
       video.play();
       requestAnimationFrame(tick);
+    }).catch(function(err) {
+      console.log(err.name + ": " + err.message);
     });
 
     function tick() {
+      if (video === null) {
+        return;
+      }
+
       loadingMessage.innerText = "⌛ Loading video..."
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
         loadingMessage.hidden = true;
@@ -43,12 +51,17 @@ var video = document.createElement("video");
           outputData = code.data;
           onSuccess(code.data);
 
-          var track = video.srcObject.getTracks()[0];
-          track.stop();
+          qrStop();
 
           return;
         } 
       }
       requestAnimationFrame(tick);
     }
+  };
+
+  function qrStop() {
+    var track = video.srcObject.getTracks()[0];
+    track.stop();
+    //video = null;
   };

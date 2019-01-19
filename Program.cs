@@ -21,6 +21,6 @@ namespace IQuest
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UseKestrel(options => 
-                options.ListenAnyIP(5001));
+                options.ListenAnyIP(5000));
     }
 }
