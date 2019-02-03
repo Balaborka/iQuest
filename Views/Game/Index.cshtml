@@ -1,0 +1,14 @@
+@model IQueryable<Question> 
+
+@{
+    ViewData["Title"] = "Tasks!";
+}
+
+@{
+    var text = "";
+    foreach(var q in Model) {
+        text += q.Text;
+    }
+}
+
+@text   

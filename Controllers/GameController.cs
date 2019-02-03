@@ -5,14 +5,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using IQuest.Entities;
 using Microsoft.AspNetCore.Mvc;
+using IQuest.Managers;
 
 namespace IQuest.Controllers
 {
-    public class TasksController : Controller
+    public class GameController : Controller
     {
+        QuestManager questManager;
+        public GameController(QuestManager questManager)
+        {
+            this.questManager = questManager;
+        }
         public IActionResult Index()
         {
-            Questions result = Questions.Deserialize("./AppData/Questions.xml");
+            var result = questManager.GetQuestions(1);
             return View(result);
         }
     }

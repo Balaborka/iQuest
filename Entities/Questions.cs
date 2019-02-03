@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace IQuest.Models
+namespace IQuest.Entities
 {
     [XmlRoot("Questions")]
     public class Questions
