@@ -35,7 +35,7 @@ $(function($) {
             onMistake('Неправильный код!');
             }
             
-            var success = !data.items.some((currentItem) => {
+            var success = !data.some((currentItem) => {
                 return !currentItem.done;
             });
         
@@ -62,7 +62,7 @@ $(function($) {
     function initTaskList() {
         var container = $('.questions-container');
         var i = 0;
-        data.items.forEach((item, index) => {
+        data.forEach((item, index) => {
             i++;
             var row = $('<div />').text("Task " + i).addClass('question');
             if (item.done)

@@ -161,6 +161,7 @@ body {
     color: rgba(255, 255, 255, 0.5);
     cursor: auto;
 }
+
 /*check-result*/
 .check-result {
     margin-top: 40px;
@@ -204,6 +205,11 @@ body {
 }
 #canvas {
     width: 100%;
+}
+
+/*REGISTRATION page*/
+.btnAddTeam {
+    
 }
 
 @media (max-width: 768px) {

@@ -10,7 +10,7 @@ namespace IQuest.Managers
         {
             this.context = context;
         }
-        public IQueryable GetQuestions (int gameId)
+        public IQueryable<Question> GetQuestions (int gameId)
         {
             return context.Question.Where(q => q.GameId == gameId);
         }
