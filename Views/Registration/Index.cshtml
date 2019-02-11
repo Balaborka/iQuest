@@ -4,15 +4,23 @@
 
 <div class="container">
 
-    <button class="btnAddTeam">+</button>
-    <input class="inputRes" id="inputRes" type="text">
+    <div class="addTeamContainer">
+
+        <div class="addTeam">
+            <div class="btnTeam" id="btnAddTeam">+</div>
+            <input class="inputRes" id="inputTeam" type="text" placeholder="Team Name">
+        </div>
+
+        <ol class="teamsList">
+        </ol>
+
+        <div class="btnTeam" id="btnDeleteTeam">x</div>
+    </div>
 
     <div class="popup">
         <div class="popup-close">X</div>
         <div class="teamGuid"></div>
     </div>
-
-    <div class="listTeams"></div>
 
 </div>
 

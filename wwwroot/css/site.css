@@ -65,12 +65,16 @@ body {
     color: #fff;
 }
 .btnStart:hover,
-.btnScan:hover {
+.btnScan:hover,
+.btnRes:hover,
+.btnTeam:hover {
     background: #dfc25c;
     text-decoration: none;
 }
 .btnStart:active,
-.btnScan:active {
+.btnScan:active,
+.btnRes:active,
+.btnTeam:active {
     width: 290px;
     box-shadow: none;
 }
@@ -186,12 +190,8 @@ body {
     font-style: normal;
     font-weight: bold;
 }
-.btnRes:hover {
-    background: #dfc25c;
-    text-decoration: none;
-}
 .btnRes:active {
-    box-shadow: none;
+    width: 44px;
 }
 .mistake {
     font-size: 17px;
@@ -208,8 +208,29 @@ body {
 }
 
 /*REGISTRATION page*/
-.btnAddTeam {
-    
+.addTeam {
+    display: flex;
+}
+.btnTeam {
+    width: 35px;
+    height: 35px;
+    background: #ffdd67;
+    border-radius: 10px;
+    box-shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    margin-right: 5px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 23px;
+    text-align: center; 
+}
+.btnTeam:active {
+    width: 35px;
+}
+.teamsList {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 @media (max-width: 768px) {
