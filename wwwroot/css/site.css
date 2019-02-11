@@ -172,7 +172,8 @@ body {
     display: flex;
     justify-content: center;
 }
-.inputRes {
+.inputRes,
+.inputTeam {
     color: black;
     font-style: normal;
 }
@@ -231,6 +232,12 @@ body {
     margin-top: 10px;
     font-weight: bold;
     font-size: 20px;
+}
+.team {
+    cursor: pointer;
+}
+.inputTeam {
+    display: none;
 }
 
 @media (max-width: 768px) {

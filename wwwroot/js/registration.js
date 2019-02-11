@@ -7,22 +7,21 @@ $(function($) {
             if (teamName != '') {
                 //$(".addTeamContainer").hide();
                 //$(".popup").fadeIn(500);
-                $(".addTeamContainer ol").append('<li><span class="team" style="cursor:pointer">' + teamName + '</span>' 
-                + '<input type="text" class="inputRes" id="inputEdit" style="display:none"/>' + '</li>');
+                var container = $(".addTeamContainer ol");
+                var liElement = $('<li>').appendTo(container);
+                var spanElement = $('<span>').addClass('team').text(teamName).appendTo(liElement);
+                var inputElement = $('<input>').addClass('inputTeam')
+                .focusout(() => {
+                    inputElement.hide();
+                    spanElement.show().text(inputElement.val());
+                }).appendTo(liElement);
+                spanElement.click(() => {
+                    spanElement.hide();
+                    inputElement.show().val(spanElement.text()).focus();
+                })
             }
         });    
     });
-
-    // Код не работает!
-    // $(function () {
-    //     $(".team").click(function() {
-    //         $(this).hide().siblings("#inputEdit").show().val($(this).text()).focus();
-    //     });
-        
-    //     $("#inputEdit").focusout(function() {
-    //         $(this).hide().siblings(".team").show().text($(this).val());
-    //     });
-    // });
 
     $(function () {
         $("#btnDeleteTeam").click(() => {
