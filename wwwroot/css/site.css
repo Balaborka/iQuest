@@ -67,7 +67,8 @@ body {
 .btnStart:hover,
 .btnScan:hover,
 .btnRes:hover,
-.btnTeam:hover {
+.btnTeam:hover,
+#btnDeleteTeam:hover {
     background: #dfc25c;
     text-decoration: none;
 }
@@ -215,7 +216,7 @@ body {
 .btnTeam {
     width: 35px;
     height: 35px;
-    background: #ffdd67;
+    background: greenyellow;
     border-radius: 10px;
     box-shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.35);
     cursor: pointer;
@@ -228,6 +229,13 @@ body {
 .btnTeam:active {
     width: 35px;
 }
+#btnDeleteTeam {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin-left: 5px;
+    background: red;
+}
 .teamsList {
     margin-top: 10px;
     font-weight: bold;
@@ -238,6 +246,10 @@ body {
 }
 .inputTeam {
     display: none;
+}
+.teamsList li {
+    display: flex;
+    margin-top: 5px;
 }
 
 @media (max-width: 768px) {
