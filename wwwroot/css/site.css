@@ -68,7 +68,8 @@ body {
 .btnScan:hover,
 .btnRes:hover,
 .btnTeam:hover,
-#btnDeleteTeam:hover {
+#btnDeleteTeam:hover,
+#btnShowGuid:hover {
     background: #dfc25c;
     text-decoration: none;
 }
@@ -229,12 +230,16 @@ body {
 .btnTeam:active {
     width: 35px;
 }
-#btnDeleteTeam {
+#btnDeleteTeam,
+#btnShowGuid {
     width: 30px;
     height: 30px;
     font-size: 20px;
     margin-left: 5px;
     background: red;
+}
+#btnShowGuid {
+    background:#ffdd67;
 }
 .teamsList {
     margin-top: 10px;

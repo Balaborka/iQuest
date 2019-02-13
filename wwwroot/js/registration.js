@@ -5,40 +5,16 @@ $(function($) {
             var teamName = $("#inputTeam").val();
             $('#inputTeam').val('');
             if (teamName != '') {
-                //$(".addTeamContainer").hide();
-                //$(".popup").fadeIn(500);
-                var container = $(".addTeamContainer ol");
-                var liElement = $('<li>').appendTo(container);
-                var btnElement = $('<div>').attr('id', 'btnDeleteTeam').html('x').addClass('btnTeam').appendTo(liElement);
-                var spanElement = $('<span>').addClass('team').text(teamName).appendTo(liElement);
-                var inputElement = $('<input>').addClass('inputTeam')
-                .focusout(() => {
-                    if (inputElement.val() != '') {
-                        inputElement.hide();
-                        btnElement.show();
-                        spanElement.show().text(inputElement.val());
-                    }
-                }).appendTo(liElement);
-                btnElement.click(() => {
-                    liElement.remove();
-                    spanElement.remove();
-                    inputElement.remove();
-                    btnElement.remove();
-                });
-                spanElement.click(() => {
-                    btnElement.hide();
-                    spanElement.hide();
-                    inputElement.show().val(spanElement.text()).focus();
-                });
+                addTeam(teamName);
+                //showPopup();
             }
         });    
     });
 
-    $(function () {
-        $("#btnDeleteTeam").click(() => {
-            $('li:last').remove()
-        });
-    });
+    function showPopup() {
+        $(".addTeamContainer").hide();
+        $(".popup").fadeIn(500);
+    }
 
     $(function () {
         $(".popup-close").click(() => {
@@ -47,4 +23,33 @@ $(function($) {
             });
         });
     });
+
+    function addTeam(teamName) {
+        var container = $(".addTeamContainer ol");
+        var liElement = $('<li>').appendTo(container);
+        var btnDeleteElement = $('<div>').attr('id', 'btnDeleteTeam').html('x').addClass('btnTeam').appendTo(liElement);
+        var btnShowGuid = $('<div>').attr('id', 'btnShowGuid').html('@').addClass('btnTeam').appendTo(liElement);
+        var spanElement = $('<span>').addClass('team').text(teamName).appendTo(liElement);
+        var inputElement = $('<input>').addClass('inputTeam')
+        .focusout(() => {
+            if (inputElement.val() != '') {
+                inputElement.hide();
+                btnDeleteElement.show();
+                btnShowGuid.show();
+                spanElement.show().text(inputElement.val());
+            }
+        }).appendTo(liElement);
+        btnDeleteElement.click(() => {
+            liElement.remove();
+        });
+        btnShowGuid.click(() => {
+            showPopup();
+        });
+        spanElement.click(() => {
+            btnDeleteElement.hide();
+            btnShowGuid.hide();
+            spanElement.hide();
+            inputElement.show().val(spanElement.text()).focus();
+        });
+    };
 });

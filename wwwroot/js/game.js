@@ -5,7 +5,7 @@ $(function($) {
     function init(data) {    
         initTaskList();
         initPopup();
-    }
+    };
 
     function initPopup() {
         $(".btnScan").click(() => {
@@ -56,7 +56,7 @@ $(function($) {
             setTimeout(function () {
                 $('.popup').css("backgroundColor", "rgba(91, 200, 220, 0.5)");
             }, 350);
-        }
+        };
     };
 
     function initTaskList() {
@@ -76,7 +76,7 @@ $(function($) {
             container.append(row);
         });
         var btnFinish = $('<div />').text("Finish").addClass('question disabled').appendTo(container);
-    }
+    };
 
     function showPopup(item, index) {
         currentItem = item;
@@ -97,7 +97,7 @@ $(function($) {
         $(".popup").fadeOut(500, () => {
             $(".questions-container").show();
         });
-    }
+    };
 
     function scanAnswer(scanRes, item, index) {
         $(".taskPopupQR").hide();
