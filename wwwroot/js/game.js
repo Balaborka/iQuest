@@ -33,7 +33,7 @@ $(function($) {
             onMistake('Введите или сканируйте код!');
             } else { 
             onMistake('Неправильный код!');
-            }
+            };
             
             var success = !data.some((currentItem) => {
                 return !currentItem.done;
@@ -41,7 +41,7 @@ $(function($) {
         
             if (success) {
                 $(".question.disabled").removeClass("disabled")
-            }
+            };
         });
 
         $(".popup-close").click(() => {
@@ -89,7 +89,7 @@ $(function($) {
 
         $(".task-korpus").text("Корпус: " + currentItem.korpus);
         $(".task-text").text(currentItem.text);
-    }
+    };
 
     function hidePopup() {
         $(".taskPopupQR").hide();

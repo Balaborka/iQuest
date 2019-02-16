@@ -8,10 +8,11 @@ namespace IQuest.Entities
     public class Team
     {
         public int TeamId { get; set; }
+
         public string Name { get; set; }
 
         public string QRcode { get; set; }
-
+        
         public int GameId { get; set; }
     }
 }

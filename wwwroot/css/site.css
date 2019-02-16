@@ -69,7 +69,7 @@ body {
 .btnRes:hover,
 .btnTeam:hover,
 #btnDeleteTeam:hover,
-#btnShowGuid:hover {
+#btnShowQR:hover {
     background: #dfc25c;
     text-decoration: none;
 }
@@ -231,14 +231,14 @@ body {
     width: 35px;
 }
 #btnDeleteTeam,
-#btnShowGuid {
+#btnShowQR {
     width: 30px;
     height: 30px;
     font-size: 20px;
-    margin-left: 5px;
+    margin-right: 5px;
     background: red;
 }
-#btnShowGuid {
+#btnShowQR {
     background:#ffdd67;
 }
 .teamsList {
@@ -300,8 +300,7 @@ body {
         top: -25px;
         right: -25px;
     }
-    .questions-container div:hover, 
-    .popup .popup-close:hover {
+    .questions-container div:hover {
         background-color: rgba(91, 200, 220, 0.5);
     }
     .questions-container div:active,
