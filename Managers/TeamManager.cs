@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using IQuest.Entities;
@@ -10,15 +11,17 @@ public class TeamManager
         this.context = context;
     }
 
-    public int AddTeam(string name) {
+    public Team AddTeam(string name) { 
+        Guid guid = Guid.NewGuid();
         Team team = new Team(){
           Name = name,
-          GameId = 1
+          GameId = 1,
+          QRcode = guid.ToString()
         };
 
         context.Add(team);
         context.SaveChanges();
-        return team.TeamId;
+        return team;
     }
 
     public void EditTeam(int id, string name) {

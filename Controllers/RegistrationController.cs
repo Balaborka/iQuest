@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using IQuest.Entities;
 using IQuest.Managers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,8 +22,8 @@ namespace IQuest.Controllers
         }
         public IActionResult AddTeam(string name)
         {
-            int id = teamManager.AddTeam(name);
-            return new JsonResult(id);
+            Team team = teamManager.AddTeam(name);
+            return new JsonResult(team);
         }
         public IActionResult EditTeam(int id, string name)
         {

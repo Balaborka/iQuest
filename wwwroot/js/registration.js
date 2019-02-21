@@ -4,7 +4,7 @@ $(function($) {
         url: "/Registration/GetTeams",
     }).done(function(teams) {
         teams.forEach((team) => {
-            addTeamRow(team.name, team.teamId);
+            addTeamRow(team);
         });
     });
 
@@ -13,7 +13,7 @@ $(function($) {
         $('#inputTeam').val('');
         if (teamName != '') {
             addTeam(teamName);
-            //showPopup(teamId);
+            //showPopup(qRcode);
         };
     });
 
@@ -34,24 +34,24 @@ $(function($) {
         $.ajax({
           url: "/Registration/AddTeam",
           data: {name: teamName}
-        }).done(function(teamId) {
-            addTeamRow(teamName, teamId);
+        }).done(function(team) {
+            addTeamRow(team);
         });
     };
 
-    function addTeamRow(teamName, teamId) {
+    function addTeamRow(team) {
         var container = $(".addTeamContainer ol");
         var liElement = $('<li>').appendTo(container);
         var btnDeleteElement = $('<div>').attr('id', 'btnDeleteTeam').html('x').addClass('btnTeam').appendTo(liElement);
         var btnShowQR = $('<div>').attr('id', 'btnShowQR').html('@').addClass('btnTeam').appendTo(liElement);
-        var spanElement = $('<span>').addClass('team').text(teamName).appendTo(liElement);
+        var spanElement = $('<span>').addClass('team').text(team.name).appendTo(liElement);
         var inputElement = $('<input>').addClass('inputTeam')
         .focusout(() => {
             var newTeamName = inputElement.val();
             if (newTeamName != '') {
                 $.ajax({
                     url: "/Registration/EditTeam",
-                    data: {id: teamId, name: newTeamName}
+                    data: {id: team.teamId, name: newTeamName}
                 }).done(function() {
                     inputElement.hide();
                     btnDeleteElement.show();
@@ -63,13 +63,13 @@ $(function($) {
         btnDeleteElement.click(() => {
             $.ajax({
                 url: "/Registration/DeleteTeam",
-                data: {id: teamId}
+                data: {id: team.teamId}
             }).done(function() {
                 liElement.remove();
             });
         });
         btnShowQR.click(() => {
-            showPopup(teamId);
+            showPopup(team.qRcode);
         });
         spanElement.click(() => {
             btnDeleteElement.hide();
