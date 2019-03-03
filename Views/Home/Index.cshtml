@@ -9,9 +9,31 @@
         <span class="to">to<br></span>
         <span class="iQuest">IQuest!</span>
         <span class="emoFingers">✌</span>
-        <a class="btnStart" href="tasks">
+        <a class="btnStart">
             <div>▶</div>
         </a>
     </div>
 
+    <div class="popup">
+        <div class="popup-close">X</div>
+        <div class="authScan"></div>
+
+        <div class="check-result">
+            <input class="inputRes" id="inputRes" type="text">
+            <div class="btnRes">ok</div>
+        </div>
+        <div class="mistake"></div>
+
+        <div class="taskPopupQR" id="taskPopupQRID">
+            <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+            <canvas id="canvas" hidden></canvas>
+        </div>
+    </div>
+
 </div>
+
+@section scripts {
+     <script src="/lib/jsQR/jsQR.js"></script>
+     <script src="/js/auth.js"></script>
+     <script src="/js/qr.js"></script>
+}

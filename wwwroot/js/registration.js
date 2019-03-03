@@ -18,6 +18,7 @@ $(function($) {
     });
 
     var qrcode = new QRCode($(".teamQR")[0]);
+    
     function showPopup(teamId) {
         qrcode.makeCode('' + teamId);
         $(".addTeamContainer").hide();

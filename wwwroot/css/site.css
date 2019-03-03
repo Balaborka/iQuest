@@ -206,6 +206,9 @@ body {
 .taskPopupQR {
     display: none;
 }
+#taskPopupQRID {
+    display: unset;
+}
 #canvas {
     width: 100%;
 }
